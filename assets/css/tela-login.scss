@@ -1,0 +1,197 @@
+/* colors */
+$darkPink: #d81b60;
+$medPink: #ad1457;
+
+.tela-login {
+    form {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        width: 100%;
+        max-width: 370px;
+        background-color: #FFF;
+        margin: 0;
+        padding: 2rem;
+        border-radius: .5em;
+        -webkit-box-shadow: 2px 2px 9px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 2px 2px 9px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 2px 2px 9px 0px rgba(0, 0, 0, 0.75);
+
+        @media(min-width: 320px) {
+            top: 60%;
+        }
+
+        @media(min-width: 375px) {
+            top: 50%;
+        }
+
+        @media(min-width: 992px) {
+            top: 55%;
+        }
+
+        .svgContainer {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            border-radius: 50%;
+            pointer-events: none;
+
+            div {
+                position: relative;
+                width: 100%;
+                height: 0;
+                overflow: hidden;
+                border-radius: 50%;
+                padding-bottom: 100%;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 10;
+                width: inherit;
+                height: inherit;
+                box-sizing: border-box;
+                border: solid 2.5px $darkPink;
+                border-radius: 50%;
+            }
+        }
+
+        .inputGroup {
+            margin: 0 0 2em;
+            padding: 0;
+            position: relative;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        label {
+            display: block;
+            font-size: 1.25em;
+            color: #908989;
+            font-weight: 700;
+            font-family: inherit;
+        }
+
+        input[type='email'],
+        input[type="text"],
+        input[type="password"] {
+            display: block;
+            margin: 0;
+            -webkit-appearance: none;
+            box-sizing: border-box;
+            width: 100%;
+            height: 40px;
+            font-size: 1.55em;
+            color: #353538;
+            font-weight: 600;
+            font-family: inherit;
+            transition: box-shadow .2s linear, border-color .25s ease-out;
+
+            &:focus {
+                outline: none;
+                box-shadow: 0px 2px 10px rgba(0, 0, 0, .1);
+            }
+        }
+
+        .inputGroup1 {
+            .helper {
+                position: absolute;
+                z-index: 1;
+                font-family: inherit;
+            }
+
+            .helper1 {
+                top: 0;
+                left: 0;
+                transform: translate(1em, 2.2em) scale(1);
+                transform-origin: 0 0;
+                color: $darkPink;
+                font-size: 1.55em;
+                font-weight: 400;
+                opacity: .65;
+                pointer-events: none;
+                transition: transform .2s ease-out, opacity .2s linear;
+            }
+
+            &.focusWithText .helper {
+                transform: translate(1em, 1.55em) scale(.6);
+                opacity: 1;
+            }
+        }
+
+        .inputGroup2 {
+            input[type="password"] {
+                padding: .4em 1em .5em;
+            }
+
+            input[type="text"] {
+                padding: .025em 1em 0;
+            }
+
+            #showPasswordToggle {
+                display: block;
+                padding: 0 0 0 1.45em;
+                position: absolute;
+                top: .25em;
+                right: 0;
+                font-size: 1em;
+
+                input {
+                    position: absolute;
+                    z-index: -1;
+                    opacity: 0;
+                }
+
+                .indicator {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: .85em;
+                    width: .85em;
+                    border: solid 2px $darkPink;
+                    border-radius: 3px;
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        left: .25em;
+                        top: .025em;
+                        width: .2em;
+                        height: .5em;
+                        border: solid $darkPink;
+                        border-width: 0 3px 3px 0;
+                        transform: rotate(45deg);
+                        visibility: hidden;
+                    }
+                }
+
+                input:checked~.indicator {
+                    &:after {
+                        visibility: visible;
+                    }
+                }
+
+                input:focus~.indicator,
+                input:hover~.indicator {
+                    border-color: $medPink;
+                }
+
+                input:disabled~.indicator {
+                    opacity: .5;
+
+                    &:after {
+                        visibility: hidden;
+                    }
+                }
+            }
+        }
+    }
+}

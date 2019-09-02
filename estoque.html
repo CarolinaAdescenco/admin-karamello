@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Lato - Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400&display=swap" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Import Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Karamello Sorvetes</title>
+</head>
+
+<body>
+    <nav class="nav-extended white">
+
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-logo">
+                <img class="responsive-img" src="assets/images/logo-karamello.png" alt="">
+            </a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="produtos.html">Produto</a></li>
+                <li><a href="estoque.html">Estoque</a></li>
+                <li><a href="venda.html">Venda</a></li>
+            </ul>
+        </div>
+        <div class="nav-content">
+            <ul class="tabs tabs-transparent">
+                <li class="tab"><a class="active" href="#cadastrar-produto">Cadastrar</a></li>
+                <li class="tab"><a href="#consultar-produto">Consultar</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="produtos.html">Produto</a></li>
+        <li><a href="estoque.html">Estoque</a></li>
+        <li><a href="venda.html">Venda</a></li>
+    </ul>
+
+    <section class="container">
+        <div id="cadastrar-produto" class="row">
+            <form class="col s12">
+                <div class="row">
+
+                    <div class="input-field col s12 m6">
+                        <select>
+                            <option value="" disabled selected>Selecione o produto</option>
+                            <option value="picole">Picolé</option>
+                            <option value="massa">Massa</option>
+                            <option value="acai">Açaí</option>
+                        </select>
+                        <label>Tipo de produto</label>
+                    </div>
+
+                    <div class="input-field col s12 m6">
+                        <select>
+                            <option value="" disabled selected>Selecione o tamanho</option>
+                            <option value="200">200 ml</option>
+                            <option value="300">300 ml</option>
+                            <option value="400">400 ml</option>
+                        </select>
+                        <label>Tamanho de produto</label>
+                    </div>
+
+                    <div class="input-field col s12 m6">
+                        <select>
+                            <option value="" disabled selected>Selecione o sabor</option>
+                            <option value="banana">Banana</option>
+                            <option value="morango">Morango</option>
+                            <option value="chocolate">Chocolate</option>
+                        </select>
+                        <label>Sabor do produto</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <input id="quantidadeFabricada" name="quantidadeFabricada" type="text" class="validate">
+                        <label for="quantidadeFabricada">Quantidade Fabricada</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input type="text" class="datepicker" placeholder="Data de fabricação">
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="text" class="datepicker" placeholder="Data de validade">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s6 l4 offset-s3 offset-l4 ">
+                        <a class="btn">cadastrar</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div id="consultar-produto" class="col s12">
+            <table class="striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Produto</th>
+                        <th>Sabor</th>
+                        <th>Quantidade</th>
+                        <th>Data de Validade</th>
+                        <th>Ver</th>
+                        <th>Excluir</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Picolé</td>
+                        <td>Banana</td>
+                        <td>900</td>
+                        <td>10/08/2019</td>
+                        <td>
+                            <a class="btn modal-trigger" href="#ver_produto"><i
+                                    class="small material-icons">search</i></a>
+                        </td>
+                        <td>
+                            <a class="btn modal-trigger" href="#deletar_produto"><i
+                                    class="small material-icons">delete</i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Picolé</td>
+                        <td>Chocolate</td>
+                        <td>900</td>
+                        <td>10/08/2019</td>
+                        <td>
+                            <a class="btn modal-trigger" href="#ver_produto"><i
+                                    class="small material-icons">search</i></a>
+                        </td>
+                        <td>
+                            <a class="btn modal-trigger" href="#deletar_produto"><i
+                                    class="small material-icons">delete</i></a>
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <!-- Modal Alterar Produto -->
+            <div id="ver_produto" class="modal">
+                <div class="modal-content">
+                    <h5>Informações</h5>
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12 m6">
+                                <input disabled value="Picolé" id="disabled" type="text" class="validate">
+                                <label for="disabled">Tipo de Produto</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input disabled value="Banana" id="disabled" type="text" class="validate">
+                                <label for="disabled">Sabor do Produto</label>
+                            </div>
+                            <div class="input-field col s12 m6">
+                                <input disabled value="500 unidades" id="disabled" type="text" class="validate">
+                                <label for="disabled">Quantidade em estoque</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="ValorUnitario" name="ValorUnitario" type="text" class="validate">
+                                <label for="ValorUnitario">Valor unitário</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="ValorAtacado" name="ValorAtacado" type="text" class="validate">
+                                <label for="ValorAtacado">Valor atacado</label>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <div class="chips chips-placeholder-ingredientes"></div>
+                            </div>
+
+                            <div class="input-field col s12">
+                                <div class="chips chips-placeholder-medidas"></div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s6 l4 offset-s3 offset-l4 ">
+                                <a class="btn">alterar</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                </div>
+            </div>
+
+            <!-- Modal Deletar Produto -->
+            <div id="deletar_produto" class="modal">
+                <div class="modal-content">
+                    <h5>Excluir Produto</h5>
+                    <p>Deseja realmente excluir este produto?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-red btn-flat">Excluir</a>
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- FontAwesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/js/fontawesome.min.js"
+        integrity="sha256-TNt3hxvmQwcyyPTYevC79inikYlBxATH32Osdz0jc+s=" crossorigin="anonymous"></script>
+    <!-- Main.js -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+$pink-darken-1: #d81b60;
+
+html,
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+p,
+a {
+    font-size: 1.15rem;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    background-color: $pink-darken-1;
+
+    &.modal-trigger {
+        background-color: $pink-darken-1;
+    }
+
+    &:hover {
+        background-color: darken($pink-darken-1, 10);
+    }
+}
+
+nav {
+    padding: 15px;
+
+    &.nav-extended {
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 1.3rem;
+
+            @media only screen and (min-width: 601px) {
+                min-height: 100px;
+                margin-top: 0px;
+            }
+
+            li {
+                margin: auto 1rem;
+            }
+
+            .sidenav-trigger {
+                color: $pink-darken-1;
+            }
+
+            a {
+                // left: 35%;
+
+                @media(min-width: 992px) {
+                    left: 10%;
+                }
+
+                &:hover {
+                    color: white;
+                    background-color: $pink-darken-1;
+                }
+            }
+        }
+    }
+
+    img.responsive-img {
+        width: 130px;
+    }
+
+
+
+    ul {
+        a {
+            font-size: 1.25rem;
+            color: $pink-darken-1;
+            font-weight: 500;
+        }
+    }
+}
+
+.datepicker-date-display {
+    background-color: $pink-darken-1;
+}
+
+.datepicker-cancel,
+.datepicker-clear,
+.datepicker-today,
+.datepicker-done {
+    color: $pink-darken-1;
+}
+
+input:not([type]):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
+input[type=time]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=datetime]:not(.browser-default):focus:not([readonly]),
+input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+input[type=tel]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=search]:not(.browser-default):focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]),
+.chips.focus {
+    border-bottom: 1px solid $pink-darken-1;
+    -webkit-box-shadow: 0 1px 0 0 $pink-darken-1;
+}
+
+input:not([type]):focus:not([readonly])+label,
+input[type=text]:not(.browser-default):focus:not([readonly])+label,
+input[type=password]:not(.browser-default):focus:not([readonly])+label,
+input[type=email]:not(.browser-default):focus:not([readonly])+label,
+input[type=url]:not(.browser-default):focus:not([readonly])+label,
+input[type=time]:not(.browser-default):focus:not([readonly])+label,
+input[type=date]:not(.browser-default):focus:not([readonly])+label,
+input[type=datetime]:not(.browser-default):focus:not([readonly])+label,
+input[type=datetime-local]:not(.browser-default):focus:not([readonly])+label,
+input[type=tel]:not(.browser-default):focus:not([readonly])+label,
+input[type=number]:not(.browser-default):focus:not([readonly])+label,
+input[type=search]:not(.browser-default):focus:not([readonly])+label,
+textarea.materialize-textarea:focus:not([readonly])+label {
+    color: $pink-darken-1;
+}
+
+.dropdown-content li>a,
+.dropdown-content li>span {
+    color: $pink-darken-1;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+
+    &.tabs-transparent {
+        @media(max-width: 992px) {
+            margin-top: 2rem;
+        }
+
+        .tab {
+
+            a,
+            a.active,
+            a:hover {
+                color: $pink-darken-1;
+            }
+        }
+
+        .indicator {
+            background-color: $pink-darken-1;
+        }
+    }
+}
+
+
+.container {
+    margin: 2rem auto;
+}
+
+
+td,
+th {
+    text-align: center;
+}
+
+.cards-action {
+    a {
+        color: white;
+
+        .card-panel {
+            background-color: $pink-darken-1;
+            padding: 2.4rem;
+
+            h5 {
+                margin: 0;
+                text-align: center;
+            }
+        }
+    }
+}
